@@ -1,12 +1,18 @@
-import React from 'react'
-import Signup from '../Signup/Signup';
-import classes from './Handler.module.css';
+import React from "react";
+import Signup from "../Signup/Signup";
+import { Container } from "react-bootstrap";
+
 const Handler = () => {
   return (
-    <div className={classes.main}>
-      <Signup/>
-    </div>
-  )
-}
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
+      <div className="2-100" style={{ maxWidth: "400px" }}>
+        <Signup />
+      </div>
+    </Container>
+  );
+};
 
-export default Handler
+export default Handler;
