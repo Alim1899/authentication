@@ -1,8 +1,8 @@
 import React from "react";
 import Signup from "../Signup/Signup";
 import { Container } from "react-bootstrap";
-
 const Handler = () => {
+ 
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
@@ -16,3 +16,5 @@ const Handler = () => {
 };
 
 export default Handler;
+
+

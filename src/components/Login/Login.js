@@ -1,9 +1,26 @@
 import classes from "./Login.module.css";
 import { Form, Button, Card } from "react-bootstrap";
+import firebase from 'firebase/compat/app'
+import 'firebase/auth'
 import { useRef } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 const Login = () => {
+  const auth = firebase.auth();
   const emailRef = useRef();
   const passwordRef = useRef();
+signInWithEmailAndPassword(auth, emailRef, passwordRef)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode,errorMessage);
+  });
 
   return (
     <div className={classes.main}>
